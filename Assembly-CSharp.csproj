@@ -54,7 +54,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
-    <Compile Include="Assets\Scripts\SwitchMechanism.cs" />
+    <Compile Include="Assets\Scripts\OnOffSwitch.cs" />
+    <Compile Include="Assets\Scripts\StayOnSwitch.cs" />
+    <Compile Include="Assets\Scripts\StayOffSwitch.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Customizable Skybox\Stylized Sky\Shaders\Stylized Sky.shader" />

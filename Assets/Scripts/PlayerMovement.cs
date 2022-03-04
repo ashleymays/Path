@@ -7,12 +7,26 @@ public class PlayerMovement : MonoBehaviour
     private bool isMoving;
     private Vector3 pivot;
     private Vector3 axis;
+    private Vector3 fall;
+    private Quaternion rotateFall;
+
+    private bool isGrounded()
+    {
+        return Physics.Raycast(transform.position, Vector3.down, 0.6f);
+    }
 
     void Update()
     {
         // cube is moving, so don't register any input
         if (isMoving)
         {
+            return;
+        }
+
+        // cube is not on the ground, make it fall
+        if (!isGrounded())
+        {
+            StartCoroutine(Fall());
             return;
         }
 
@@ -45,11 +59,18 @@ public class PlayerMovement : MonoBehaviour
     IEnumerator MoveCube()
     {
         isMoving = true;
-        for (int i = 0; i < 15f; ++i)
+        for (float i = 0; i < 7.25f; i += 0.3f)
         {
-            transform.RotateAround(pivot, axis, 6f);
-            yield return new WaitForSeconds(0.0075f);
+            transform.RotateAround(pivot, axis, i);
+            yield return new WaitForSeconds(0.0005f);
         }
         isMoving = false;
+    }
+
+    IEnumerator Fall()
+    {
+        fall = new Vector3(0f, -10f, 0f);
+        transform.Translate(fall * Time.deltaTime);
+        yield return null;
     }
 }
