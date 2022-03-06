@@ -17,12 +17,12 @@ public class OnOffSwitch : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player" && !platform.activeSelf)
+        if (other.gameObject.CompareTag("Player") && !platform.activeSelf)
         {
             platform.SetActive(true);
         }
 
-        else if (other.gameObject.tag == "Player" && platform.activeSelf)
+        else if (other.gameObject.CompareTag("Player") && platform.activeSelf)
         {
             platform.SetActive(false);
         }
