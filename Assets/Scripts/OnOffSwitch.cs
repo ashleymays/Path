@@ -9,10 +9,11 @@ using UnityEngine;
 public class OnOffSwitch : MonoBehaviour
 {
     public GameObject platform;
+    public bool isVisible;
 
     void Start()
     {
-        platform.SetActive(false);
+        platform.SetActive(isVisible);
     }
 
     private void OnTriggerEnter(Collider other)

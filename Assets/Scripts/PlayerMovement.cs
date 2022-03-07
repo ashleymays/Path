@@ -59,8 +59,12 @@ public class PlayerMovement : MonoBehaviour
         for (float i = 0; i < 7.25f; i += 0.3f)
         {
             transform.RotateAround(pivot, axis, i);
-            yield return new WaitForSeconds(0.0001f);
+            yield return new WaitForSeconds(0.000075f);
         }
+
+        // after a move, check if the player is on the ground or platform
+        // if it's not, start falling
+        // if it is, allow the player to move again
         if (!isGrounded())
         {
             isFalling = true;
@@ -73,11 +77,12 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    // NOTE: change it so that the while loop has an exit rather than just while (true)
     IEnumerator Fall()
     {
         while (true)
         {
-            transform.Rotate(axis * 250f * Time.deltaTime);
+            transform.Rotate(axis * 350f * Time.deltaTime);
             transform.Translate(Vector3.down * 15f * Time.deltaTime, Space.World);
             yield return new WaitForSeconds(0.0025f);
         }
