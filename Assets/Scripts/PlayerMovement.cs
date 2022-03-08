@@ -9,10 +9,12 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 pivot;
     private Vector3 axis;
     private Collider playerCollider;
+    private Renderer playerRenderer;
 
     private void Start()
     {
         playerCollider = GetComponent<Collider>();
+        playerRenderer = GetComponent<Renderer>();
     }
 
     private bool isGrounded()
@@ -22,7 +24,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        // cube is moving, so don't register any input
+        // player is either moving or they fell off the stage, so don't register any input
         if (isMoving || isFalling)
         {
             return;
@@ -59,7 +61,7 @@ public class PlayerMovement : MonoBehaviour
         for (float i = 0; i < 7.25f; i += 0.3f)
         {
             transform.RotateAround(pivot, axis, i);
-            yield return new WaitForSeconds(0.000075f);
+            yield return null;
         }
 
         // after a move, check if the player is on the ground or platform
@@ -77,13 +79,13 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    // NOTE: change it so that the while loop has an exit rather than just while (true)
     IEnumerator Fall()
     {
-        while (true)
+        while (playerRenderer.isVisible)
         {
-            transform.Rotate(axis * 350f * Time.deltaTime);
-            transform.Translate(Vector3.down * 15f * Time.deltaTime, Space.World);
+            Vector3 direction = Vector3.Cross(axis, Vector3.up);
+            transform.Rotate(axis * 500f * Time.deltaTime, Space.World);
+            transform.Translate((Vector3.down * 5f + direction) * 2.5f * Time.deltaTime, Space.World);
             yield return new WaitForSeconds(0.0025f);
         }
     }
