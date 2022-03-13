@@ -58,9 +58,9 @@ public class PlayerMovement : MonoBehaviour
     IEnumerator MoveCube()
     {
         isMoving = true;
-        for (float i = 0; i < 7.25f; i += 0.3f)
+        for (int i = 0; i < 10; ++i)
         {
-            transform.RotateAround(pivot, axis, i);
+            transform.RotateAround(pivot, axis, 9);
             yield return null;
         }
 
@@ -84,8 +84,8 @@ public class PlayerMovement : MonoBehaviour
         while (playerRenderer.isVisible)
         {
             Vector3 direction = Vector3.Cross(axis, Vector3.up);
-            transform.Rotate(axis * 500f * Time.deltaTime, Space.World);
-            transform.Translate((Vector3.down * 5f + direction) * 2.5f * Time.deltaTime, Space.World);
+            transform.Rotate(axis * 350f * Time.deltaTime, Space.World);
+            transform.Translate((Vector3.down * 5f + direction) * 2f * Time.deltaTime, Space.World);
             yield return new WaitForSeconds(0.0025f);
         }
     }

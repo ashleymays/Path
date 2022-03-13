@@ -9,8 +9,19 @@ using UnityEngine.SceneManagement;
 
 public class PlayerLoses : MonoBehaviour
 {
-    private void OnBecameInvisible()
+    private Transform player;
+
+    private void Start()
     {
-        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name);
+        player = GetComponent<Transform>();
+    }
+    private void Update()
+    {
+        // Player is offscreen. Using OnBecameInvisible() method
+        // causes problems with loading future scenes when the player wins.
+        if (player.transform.position.y < -13)
+        {
+            SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name);
+        }
     }
 }
