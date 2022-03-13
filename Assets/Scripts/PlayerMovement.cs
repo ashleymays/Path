@@ -58,9 +58,9 @@ public class PlayerMovement : MonoBehaviour
     IEnumerator MoveCube()
     {
         isMoving = true;
-        for (int i = 0; i < 10; ++i)
+        for (int i = 0; i < 15; ++i)
         {
-            transform.RotateAround(pivot, axis, 9);
+            transform.RotateAround(pivot, axis, 6);
             yield return null;
         }
 
@@ -81,7 +81,8 @@ public class PlayerMovement : MonoBehaviour
 
     IEnumerator Fall()
     {
-        while (playerRenderer.isVisible)
+        // TODO: change while (true)
+        while (transform.position.y >= -13)
         {
             Vector3 direction = Vector3.Cross(axis, Vector3.up);
             transform.Rotate(axis * 350f * Time.deltaTime, Space.World);
