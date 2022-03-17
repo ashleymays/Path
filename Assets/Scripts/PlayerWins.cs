@@ -10,10 +10,8 @@ using UnityEngine.UI;
 
 public class PlayerWins : MonoBehaviour
 {
-    public GameObject player;
     private void OnTriggerEnter(Collider other)
     {
-        Destroy(player.gameObject);
         StartCoroutine(LoadNextLevel());
     }
 

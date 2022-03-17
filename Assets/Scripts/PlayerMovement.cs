@@ -10,11 +10,13 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 axis;
     private Collider playerCollider;
     private Renderer playerRenderer;
+    private AudioSource playerAudioSource;
 
     private void Start()
     {
         playerCollider = GetComponent<Collider>();
         playerRenderer = GetComponent<Renderer>();
+        playerAudioSource = GetComponent<AudioSource>();
     }
 
     private bool isGrounded()
@@ -58,10 +60,10 @@ public class PlayerMovement : MonoBehaviour
     IEnumerator MoveCube()
     {
         isMoving = true;
-        for (int i = 0; i < 15; ++i)
+        for (int i = 0; i < 18; ++i)
         {
-            transform.RotateAround(pivot, axis, 6);
-            yield return null;
+            transform.RotateAround(pivot, axis, 5);
+            yield return new WaitForSeconds(0.005f);
         }
 
         // after a move, check if the player is on the ground or platform
@@ -74,6 +76,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
+            playerAudioSource.Play();
             isFalling = false;
             isMoving = false;
         }
@@ -81,7 +84,6 @@ public class PlayerMovement : MonoBehaviour
 
     IEnumerator Fall()
     {
-        // TODO: change while (true)
         while (transform.position.y >= -13)
         {
             Vector3 direction = Vector3.Cross(axis, Vector3.up);
