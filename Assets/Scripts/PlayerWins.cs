@@ -12,6 +12,7 @@ public class PlayerWins : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
+        Destroy(other.gameObject.GetComponent<PlayerMovement>());
         StartCoroutine(LoadNextLevel());
     }
 

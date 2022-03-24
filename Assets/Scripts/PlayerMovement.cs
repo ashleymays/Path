@@ -10,13 +10,13 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 axis;
     private Collider playerCollider;
     private Renderer playerRenderer;
-    private AudioSource playerAudioSource;
+    // private AudioSource playerAudioSource;
 
     private void Start()
     {
         playerCollider = GetComponent<Collider>();
         playerRenderer = GetComponent<Renderer>();
-        playerAudioSource = GetComponent<AudioSource>();
+        // playerAudioSource = GetComponent<AudioSource>();
     }
 
     private bool isGrounded()
@@ -34,25 +34,25 @@ public class PlayerMovement : MonoBehaviour
 
         else if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
         {
-            pivot = new Vector3(transform.position.x, 0f, transform.position.z + 0.525f);
+            pivot = new Vector3(transform.position.x, -0.1f, transform.position.z + 0.5f);
             axis = Vector3.right;
             StartCoroutine(MoveCube());
         }
         else if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
         {
-            pivot = new Vector3(transform.position.x, 0f, transform.position.z - 0.525f);
+            pivot = new Vector3(transform.position.x, -0.1f, transform.position.z - 0.5f);
             axis = -Vector3.right;
             StartCoroutine(MoveCube());
         }
         else if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
-            pivot = new Vector3(transform.position.x - 0.525f, 0f, transform.position.z);
+            pivot = new Vector3(transform.position.x - 0.5f, -0.1f, transform.position.z);
             axis = Vector3.forward;
             StartCoroutine(MoveCube());
         }
         else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
-            pivot = new Vector3(transform.position.x + 0.525f, 0f, transform.position.z);
+            pivot = new Vector3(transform.position.x + 0.5f, -0.1f, transform.position.z);
             axis = -Vector3.forward;
             StartCoroutine(MoveCube());
         }
@@ -63,7 +63,7 @@ public class PlayerMovement : MonoBehaviour
         for (int i = 0; i < 18; ++i)
         {
             transform.RotateAround(pivot, axis, 5);
-            yield return new WaitForSeconds(0.005f);
+            yield return new WaitForSeconds(0.01f);
         }
 
         // after a move, check if the player is on the ground or platform
@@ -76,7 +76,6 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            playerAudioSource.Play();
             isFalling = false;
             isMoving = false;
         }
