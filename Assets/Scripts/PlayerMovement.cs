@@ -38,25 +38,25 @@ public class PlayerMovement : MonoBehaviour
 
         else if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
         {
-            pivot = new Vector3(transform.position.x, -0.1f, transform.position.z + 0.5f);
+            pivot = new Vector3(transform.position.x, 0.48f, transform.position.z + 0.52f);
             axis = Vector3.right;
             StartCoroutine(MoveCube());
         }
         else if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
         {
-            pivot = new Vector3(transform.position.x, -0.1f, transform.position.z - 0.5f);
+            pivot = new Vector3(transform.position.x, 0.48f, transform.position.z - 0.52f);
             axis = -Vector3.right;
             StartCoroutine(MoveCube());
         }
         else if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
-            pivot = new Vector3(transform.position.x - 0.5f, -0.1f, transform.position.z);
+            pivot = new Vector3(transform.position.x - 0.52f, 0.48f, transform.position.z);
             axis = Vector3.forward;
             StartCoroutine(MoveCube());
         }
         else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
-            pivot = new Vector3(transform.position.x + 0.5f, -0.1f, transform.position.z);
+            pivot = new Vector3(transform.position.x + 0.52f, 0.48f, transform.position.z);
             axis = -Vector3.forward;
             StartCoroutine(MoveCube());
         }
