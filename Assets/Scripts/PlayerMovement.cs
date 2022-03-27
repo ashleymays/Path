@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+    PlayerMovement: allows the cube to roll. Also control when the cube falls off the platform.
+*/
+
 public class PlayerMovement : MonoBehaviour
 {
     private bool isMoving;

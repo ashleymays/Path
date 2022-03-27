@@ -10,10 +10,26 @@ using UnityEngine.UI;
 
 public class PlayerWins : MonoBehaviour
 {
+    private int numOfGrounds;
+    private int numOfDisabledGrounds;
+
+    private void Start()
+    {
+        numOfGrounds = GameObject.FindGameObjectsWithTag("Ground").Length;
+    }
     private void OnTriggerEnter(Collider other)
     {
-        Destroy(other.gameObject.GetComponent<PlayerMovement>());
-        StartCoroutine(LoadNextLevel());
+        // get the array of grounds tagged "Ground"
+        // get the array of grounds tagged "Disabled Ground"
+        // if the array sizes are equal, then the player wins
+            // add one since it won't take the most recently disabled ground into account
+            // TODO: FIX THE ABOVE
+        numOfDisabledGrounds = GameObject.FindGameObjectsWithTag("Disabled Ground").Length + 1;
+        if (numOfDisabledGrounds == numOfGrounds)
+        {
+            Destroy(other.gameObject.GetComponent<PlayerMovement>());
+            StartCoroutine(LoadNextLevel());
+        }
     }
 
     IEnumerator LoadNextLevel()
