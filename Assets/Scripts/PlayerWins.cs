@@ -12,23 +12,32 @@ public class PlayerWins : MonoBehaviour
 {
     private int numOfGrounds;
     private int numOfDisabledGrounds;
+    private Renderer goalRenderer;
+    private Material disabledMat;
 
     private void Start()
     {
+        goalRenderer = GetComponent<Renderer>();
+        disabledMat = Resources.Load("Materials/DisabledGroundMat", typeof(Material)) as Material;
         numOfGrounds = GameObject.FindGameObjectsWithTag("Ground").Length;
     }
+
     private void OnTriggerEnter(Collider other)
     {
-        // get the array of grounds tagged "Ground"
-        // get the array of grounds tagged "Disabled Ground"
-        // if the array sizes are equal, then the player wins
-            // add one since it won't take the most recently disabled ground into account
-            // TODO: FIX THE ABOVE
-        numOfDisabledGrounds = GameObject.FindGameObjectsWithTag("Disabled Ground").Length + 1;
-        if (numOfDisabledGrounds == numOfGrounds)
+        if (other.gameObject.CompareTag("Player"))
         {
-            Destroy(other.gameObject.GetComponent<PlayerMovement>());
-            StartCoroutine(LoadNextLevel());
+            numOfDisabledGrounds = GameObject.FindGameObjectsWithTag("Disabled Ground").Length;
+            if (numOfDisabledGrounds == numOfGrounds)
+            {
+                goalRenderer.material = disabledMat;
+                Debug.Log("Won Level!");
+                // Destroy(other.gameObject.GetComponent<PlayerMovement>());
+                // StartCoroutine(LoadNextLevel());
+            }
+            else
+            {
+                Debug.Log("Not done.");
+            }
         }
     }
 
