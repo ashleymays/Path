@@ -14,6 +14,16 @@ public class PlayerWins : MonoBehaviour
     private int numOfDisabledGrounds;
     private Renderer goalRenderer;
     private Material disabledMat;
+    public Animator animator;
+    public Text transitionText;
+    public float transitionDelayTime = 3.0f;
+
+    void Awake()
+    {
+        transitionText = GameObject.Find("Text").GetComponent<Text>();
+        transitionText.enabled = true;
+        animator = GameObject.Find("Transition").GetComponent<Animator>();
+    }
 
     private void Start()
     {
@@ -30,9 +40,8 @@ public class PlayerWins : MonoBehaviour
             if (numOfDisabledGrounds == numOfGrounds)
             {
                 goalRenderer.material = disabledMat;
-                Debug.Log("Won Level!");
-                // Destroy(other.gameObject.GetComponent<PlayerMovement>());
-                // StartCoroutine(LoadNextLevel());
+                transitionText.enabled = false;
+                StartCoroutine(LoadNextLevel(SceneManager.GetActiveScene().buildIndex + 1));
             }
             else
             {
@@ -41,18 +50,10 @@ public class PlayerWins : MonoBehaviour
         }
     }
 
-    IEnumerator LoadNextLevel()
+    IEnumerator LoadNextLevel(int levelIndex)
     {
-        yield return null;
-
-        AsyncOperation loading = SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
-        while (!loading.isDone)
-        {
-            if (loading.progress >= 0.9f)
-            {
-                loading.allowSceneActivation = true;
-            }
-            yield return null;
-        }
+        animator.SetTrigger("TriggerTransition");
+        yield return new WaitForSeconds(transitionDelayTime);
+        SceneManager.LoadScene(levelIndex);
     }
 }
