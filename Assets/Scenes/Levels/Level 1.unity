@@ -20,11 +20,11 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
-  m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
-  m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
+  m_AmbientSkyColor: {r: 0.6886792, g: 0.6886792, b: 0.6886792, a: 1}
+  m_AmbientEquatorColor: {r: 0.764151, g: 0.764151, b: 0.764151, a: 1}
+  m_AmbientGroundColor: {r: 1, g: 1, b: 1, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 0
+  m_AmbientMode: 1
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: 4b554639636d7294f8b244a20d49a61e, type: 2}
   m_HaloStrength: 0.5
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.73583883, g: 0.73583883, b: 0.73583883, a: 1}
+  m_IndirectSpecularColor: {r: 0.09637446, g: 0.23046863, b: 0.3476558, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: 524ef08916ed74649978a84949b1b9fa, type: 2}
+  m_LightingDataAsset: {fileID: 112000000, guid: d7d83d13f4ba53643b7c918b779e52d7, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -258,7 +258,6 @@ GameObject:
   - component: {fileID: 66745692}
   - component: {fileID: 66745691}
   - component: {fileID: 66745690}
-  - component: {fileID: 66745689}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -266,18 +265,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &66745689
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 66745688}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae6f18baaa58bda42b0db21468b09028, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &66745690
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -655,7 +642,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.36
+  m_Intensity: 0.3
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -712,13 +699,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 778342072}
-  m_LocalRotation: {x: 0.4760238, y: 0.4498469, z: -0.68874896, w: 0.31090838}
+  m_LocalRotation: {x: 0.36176023, y: 0.4931517, z: -0.75505185, w: 0.2362787}
   m_LocalPosition: {x: -0.45616823, y: 23.69899, z: 8.717049}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 113.7, y: 110.7, z: 0}
+  m_LocalEulerAnglesHint: {x: 113.7, y: 128.8, z: 0}
 --- !u!1 &878384578
 GameObject:
   m_ObjectHideFlags: 0
@@ -796,8 +783,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db16d1c8b6bb3d84eb3063c615d65cbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
-  transitionText: {fileID: 0}
   transitionDelayTime: 2
 --- !u!33 &878384583
 MeshFilter:
@@ -1790,7 +1775,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-108614
+  m_Name: pb_Mesh80374
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

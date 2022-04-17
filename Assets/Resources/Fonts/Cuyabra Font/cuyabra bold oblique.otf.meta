@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 7c53b3ceff686ab4f80026e29ecce281
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - cuyabra
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: c311c71abc86dec4d8fbd3f19bd77652, type: 3}
+  - {fileID: 12800000, guid: 89d2011a9cae1b24c816314f7f10ac00, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
