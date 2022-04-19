@@ -59,8 +59,11 @@
     <Compile Include="Assets\Scripts\ChangeCameraView.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\Day-Night Skyboxes\Textures\Readme for Assigning.txt" />
-    <None Include="Assets\Day-Night Skyboxes\readme.txt" />
+    <None Include="Assets\Resources\Fonts\Foundation One\OFL.txt" />
+    <None Include="Assets\Resources\Fonts\Foundation One\OFL-FAQ.txt" />
+    <None Include="Assets\Resources\Fonts\Newest Shape\SIL - Open Font License.txt" />
+    <None Include="Assets\Resources\Fonts\Rodina Nesselova\1001fonts-rodina-nesselova-eula.txt" />
+    <None Include="Assets\Resources\Fonts\Foundation One\fontlog.txt.txt" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
