@@ -3,10 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-
-/*
-    PlayerWins: Runs when the player reaches the green square (aka the goal).
-*/
+using TMPro;
 
 public class LevelManagement : MonoBehaviour
 {
@@ -14,13 +11,13 @@ public class LevelManagement : MonoBehaviour
     private int numOfGrounds;
     private int numOfDisabledGrounds;
     private Animator animator;
-    private Text transitionText;
+    private TextMeshProUGUI transitionText;
     public float transitionDelayTime = 2.0f;
 
     void Awake()
     {
-        transitionText = GameObject.Find("Text").GetComponent<Text>(); // get level title text from the transition slide
-        transitionText.enabled = true; // show the title text at the start of the level
+        transitionText = GameObject.Find("Text").GetComponent<TextMeshProUGUI>(); // get level title text from the transition slide
+        transitionText.enabled = true;
         animator = GameObject.Find("Transition").GetComponent<Animator>();
     }
 

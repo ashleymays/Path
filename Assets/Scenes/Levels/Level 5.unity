@@ -20,13 +20,13 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.49056602, g: 0.49056602, b: 0.49056602, a: 1}
-  m_AmbientEquatorColor: {r: 0.8679245, g: 0.8679245, b: 0.8679245, a: 1}
-  m_AmbientGroundColor: {r: 1, g: 1, b: 1, a: 1}
+  m_AmbientSkyColor: {r: 0.69, g: 0.69, b: 0.69, a: 1}
+  m_AmbientEquatorColor: {r: 0.78699994, g: 0.78699994, b: 0.78699994, a: 1}
+  m_AmbientGroundColor: {r: 0.93, g: 0.93, b: 0.93, a: 1}
   m_AmbientIntensity: 1
   m_AmbientMode: 1
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 0b846be1b116429409a7669cacf2a62e, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: e89fe43e2ced1d844824f95edf3aecda, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.49758047, g: 0.43085128, b: 0.31435707, a: 1}
+  m_IndirectSpecularColor: {r: 0.77975774, g: 0.7797611, b: 0.77975774, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -594,6 +594,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3395921809619175311, guid: b1a56b09e712ebf4288d52321ac2895d, type: 3}
+      propertyPath: m_text
+      value: Level 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4747563562537456549, guid: b1a56b09e712ebf4288d52321ac2895d, type: 3}
       propertyPath: m_Name
       value: Tool Bar
@@ -1655,7 +1659,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5.825
+  orthographic size: 6.1
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1679,7 +1683,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1061604892}
   m_LocalRotation: {x: 0.27781588, y: -0.36497167, z: 0.1150751, w: 0.8811196}
-  m_LocalPosition: {x: 8.9, y: 8.05, z: -5}
+  m_LocalPosition: {x: 8.9, y: 8.49, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1800,7 +1804,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1169061749}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 2.5, y: 11.71, z: 1.75}
+  m_LocalPosition: {x: 2.5, y: 11.71, z: 2.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2156,6 +2160,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1365086267298835261, guid: 333839342ace54e4cbe632c04f55750b, type: 3}
+      propertyPath: m_text
+      value: Level 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6474043815449333410, guid: 333839342ace54e4cbe632c04f55750b, type: 3}
       propertyPath: m_Text
       value: Level 5
